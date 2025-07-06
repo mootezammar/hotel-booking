@@ -22,6 +22,9 @@ const clerkWebHooks = async () => {
 
         const { data, type } = req.body
 
+
+        console.log("Webhook data:", data);
+
         const userData = {
             _id: data.id,
             email: data.email_addresses[0].email_address,
@@ -53,10 +56,14 @@ const clerkWebHooks = async () => {
         res.json({ succes: true , message:"webhooks Recieved"})
 
     } catch (error) {
-        console.log(error.message);
-        res.json({ succes: false, message:error.message })
+        console.error("Erreur webhook:", error);
+        res.status(400).json({
+            success: false,
+            message: error.message
+        });
+    }
 
 
     }
-}
+
 export default clerkWebHooks
