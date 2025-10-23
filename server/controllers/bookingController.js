@@ -1,6 +1,6 @@
-import Booking from "../models/booking"
-import Room from "../models/room"
-import Hotel from './../models/hotel';
+import Booking from "../models/booking.js"
+import Room from "../models/room.js"
+import Hotel from "../models/hotel.js"
 
 // function to Check availability of Room
 
@@ -21,7 +21,7 @@ const checkAvailability = async ({ checkInDate, checkOutDate, room }) => {
 
 //Api to check avaibility of room
 //POST /api/bookings/check-availability
-export const chackAvailabilityAPI = async (req, res) => {
+export const checkAvailabilityAPI = async (req, res) => {
     try {
         const { checkInDate, checkOutDate, room } = req.body
         const isAvailable = await checkAvailability({ checkInDate, checkOutDate, room })
