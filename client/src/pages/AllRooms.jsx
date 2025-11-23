@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { assets, facilityIcons, roomsDummyData } from '../assets/assets'
+<<<<<<< HEAD
 import { useNavigate, useSearchParams } from 'react-router-dom'
+=======
+import { useNavigate } from 'react-router-dom'
+>>>>>>> 9677e9bb67a8d6eefd6a6808096f8a2f1f7ba027
 import StarRating from '../components/StarRating'
 
 const CheckBox = ({ label, selected = false, onChange = () => { } }) => {
@@ -24,6 +28,7 @@ const RadioButton = ({ label, selected = false, onChange = () => { } }) => {
 }
 
 const AllRooms = () => {
+<<<<<<< HEAD
 
     const[searchParams,setSearchParams]=useSearchParams()
     const{rooms,navigate,currency}=useAppContext()
@@ -35,6 +40,10 @@ const AllRooms = () => {
         priceRange:[]
     })
     const [selectedSort,setSelectedSort]=useState("")
+=======
+    const navigate = useNavigate()
+    const [openFilters, setOpenFilters] = useState(false)
+>>>>>>> 9677e9bb67a8d6eefd6a6808096f8a2f1f7ba027
 
     const roomTypes = [
         "Single Bed",
@@ -56,6 +65,7 @@ const AllRooms = () => {
         'Newest First'
     ];
 
+<<<<<<< HEAD
     //*Handle changes for filters and sortings
     const handleFilterChange=(checked,value,type)=>{
         setSelectedFilters((prevFilters)=>{
@@ -104,6 +114,8 @@ const AllRooms = () => {
     // filter Destination 
    
 
+=======
+>>>>>>> 9677e9bb67a8d6eefd6a6808096f8a2f1f7ba027
 
     return (
         <div className='flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>
