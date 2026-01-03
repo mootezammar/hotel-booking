@@ -84,7 +84,7 @@ export const AppProvider = ({ children }) => {
   // Fetch rooms on component mount
   useEffect(() => {
     fetchRooms();
-  }, [rooms]);
+  }, []);
 
   const value = {
     currency,
